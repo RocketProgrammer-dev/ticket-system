@@ -1,0 +1,48 @@
+attachment-store/
+.qtcreator/
+echo appsettings.json
+# ---- Build output -----------------------------------------------------
+# Generated files. Committing these bloats the repository with thousands of
+# machine-specific artifacts and causes conflicts on every pull.
+build/
+build-*/
+cmake-build-*/
+CMakeCache.txt
+CMakeFiles/
+*_autogen/
+deploy/windows/
+installer-output/
+attachment-store/
+
+# Qt Creator per-user settings: contains absolute paths from YOUR machine.
+CMakeLists.txt.user*
+
+# ---- .NET -------------------------------------------------------------
+backend/bin/
+backend/obj/
+*.user
+
+# ---- Secrets ----------------------------------------------------------
+# NEVER commit these. appsettings.Development.json holds your database
+# password; committing it once puts it in the history permanently, even if
+# you delete the file in a later commit.
+appsettings.Development.json
+appsettings.Production.json
+*.env
+secrets.json
+
+# ---- Compiled translations --------------------------------------------
+# .qm files are generated from .ts by lrelease at build time. Commit the .ts
+# (source), not the .qm (output).
+*.qm
+
+# ---- Editor / OS ------------------------------------------------------
+.vscode/
+.idea/
+*.swp
+*~
+.DS_Store
+
+# ---- Local logs and uploads -------------------------------------------
+*.log
+uploads/

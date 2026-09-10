@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <!-- Change this to match an SDK you have installed; run "dotnet
+         list-sdks" (with a double dash before list) to see them.
+         Nothing here depends on version 10.
+         Note: XML comments cannot contain a double hyphen, which is why the
+         flag is written oddly above. -->
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>cf1a19b5-77a5-4ea8-9b94-88d6d12ca850</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- EF Core provider for PostgreSQL. Pulls in EF Core itself. -->
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="10.0.0" />
+
+    <!-- JWT bearer authentication (requirement 20). -->
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="10.0.0" />
+
+    <!-- Password hashing. Never store passwords in any recoverable form. -->
+    <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
+
+    <!-- Interactive API docs at /swagger — invaluable for testing endpoints
+         before the Qt client can call them. -->
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="7.2.0" />
+  </ItemGroup>
+
+</Project>
